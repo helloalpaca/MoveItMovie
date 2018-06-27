@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "772100165330",
+    "firebase_url": "https://moviemoveit-9a975.firebaseio.com",
+    "project_id": "moviemoveit-9a975",
+    "storage_bucket": "moviemoveit-9a975.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772100165330:android:41c727ca029145f7",
+        "android_client_info": {
+          "package_name": "com.example.alswn.gps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772100165330-1bhivj8otoh6kfq5fgfrqc913bt7f1pd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alswn.gps",
+            "certificate_hash": "4c2d560e7e9b2d6c9900587c459efba933860c72"
+          }
+        },
+        {
+          "client_id": "772100165330-9e721jfrb1b4hs534bsd3qomb99ksh24.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "772100165330-9e721jfrb1b4hs534bsd3qomb99ksh24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvcNbufYhlbmmoL0NIR46yMxQac2MHuhM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772100165330-9e721jfrb1b4hs534bsd3qomb99ksh24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

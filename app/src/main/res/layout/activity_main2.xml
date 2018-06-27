@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="0,1,2,3"
+        android:stretchColumns="0,1,2,3"
+        android:id="@+id/btnset">
+
+        <TableRow>
+            <Button
+                android:text="영화 추천"
+                android:layout_height="50dp"
+                android:id="@+id/btn1"
+                android:background="#EEE"/>
+
+            <Button
+                android:text="영화관 추천"
+                android:layout_height="50dp"
+                android:id="@+id/btn2"
+                android:background="#EEE"/>
+            <Button
+                android:text="영화관 리뷰"
+                android:layout_height="50dp"
+                android:id="@+id/btn3"
+                android:background="#EEE"/>
+            <Button
+                android:text="내 리뷰"
+                android:layout_height="50dp"
+                android:id="@+id/btn4"
+                android:background="#EEE"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</LinearLayout>
