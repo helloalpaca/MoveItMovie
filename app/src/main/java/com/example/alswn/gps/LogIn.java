@@ -36,7 +36,7 @@ public class LogIn extends AppCompatActivity {
     public EditText email;
     public EditText pwd;
 
-    final static public String MainURL = "http://192.168.1.22/~Kwon/";
+    final static public String MainURL = "http://192.168.43.72/~Kwon/";
     public String Query_ID_URL = MainURL+"query_ID.php";
 
     String myId;
