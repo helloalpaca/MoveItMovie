@@ -30,7 +30,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB14-63TfwS2T_MGPmA1OVY1z7vjhONqZg" />
+            android:value="Your API key" />
 
         <activity android:name=".LogIn"
             android:theme="@style/AppTheme.NoActionBar">
