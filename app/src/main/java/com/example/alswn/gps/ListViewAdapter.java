@@ -74,4 +74,8 @@ public class ListViewAdapter extends BaseAdapter{
         return convertView;
     }
 
+    public void clear(){
+        listViewItemList.clear();
+    }
+
 }
