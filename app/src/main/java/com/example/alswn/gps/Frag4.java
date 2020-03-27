@@ -48,10 +48,10 @@ public class Frag4 extends Fragment {
         listview2 = (ListView) view.findViewById(R.id.listview2);
 
 
-        System.out.println(LogIn.afterID);
+        System.out.println(LogIn.userID);
 
         GetData task = new GetData();
-        task.execute(LogIn.afterID);
+        task.execute(LogIn.userID);
 
         return view;
     }
@@ -65,7 +65,7 @@ public class Frag4 extends Fragment {
         @Override
         protected String doInBackground(String... strings) {
 
-            String serverURL = "id="+LogIn.afterID;
+            String serverURL = "id="+LogIn.userID;
             if (android.os.Build.VERSION.SDK_INT > 9) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);

@@ -72,7 +72,7 @@ public class Frag3 extends Fragment {
                 System.out.println("Free Review = "+review_free);
 
                 GetData task = new GetData();
-                task.execute(LogIn.afterID,theater_name,screen_num,kind_num,popcorn_num,clean_num,review_free);
+                task.execute(LogIn.userID,theater_name,screen_num,kind_num,popcorn_num,clean_num,review_free);
             }
         });
 
@@ -87,7 +87,7 @@ private class GetData extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... strings) {
 
-        String serverURL ="id="+LogIn.afterID+"&theater="+theater_name+"&screen="+screen_num+"&kind="+kind_num+"&taste="+popcorn_num+"&clean="+clean_num+"&FreeReview="+review_free;
+        String serverURL ="id="+LogIn.userID+"&theater="+theater_name+"&screen="+screen_num+"&kind="+kind_num+"&taste="+popcorn_num+"&clean="+clean_num+"&FreeReview="+review_free;
         System.out.println("serverURL = "+serverURL);
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
