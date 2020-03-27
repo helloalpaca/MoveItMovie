@@ -79,7 +79,7 @@ public class Frag3 extends Fragment {
         return view;
     }
 
-/*------------GetData---------------*/
+/*------------GetLogInData---------------*/
 private class GetData extends AsyncTask<String,Void,String> {
     ProgressDialog progressDialog;
     String errorString = null;
