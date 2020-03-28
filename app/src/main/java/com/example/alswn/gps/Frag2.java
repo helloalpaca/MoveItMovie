@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class Frag2 extends Fragment {
+public class Frag2 extends Fragment implements View.OnClickListener {
 
     View view;
     @Nullable
@@ -18,13 +18,14 @@ public class Frag2 extends Fragment {
         view = inflater.inflate(R.layout.frag2,container,false);
 
         Button button = (Button) view.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        button.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(getActivity(),MainActivity.class);
+        startActivity(intent);
     }
 }

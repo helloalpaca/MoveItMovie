@@ -29,7 +29,7 @@ import static com.example.alswn.gps.LogIn.MainURL;
 
 public class Frag4 extends Fragment {
 
-    final static private String Id_Review_URL = MainURL+"show_id_theaterReview.php";
+    final static private String myReviewURL = MainURL+"myReview.php";
     String mJsonString;
 
     ListView listview2;
@@ -42,21 +42,17 @@ public class Frag4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState){
         view = inflater.inflate(R.layout.frag4,container,false);
-        // Adapter 생성
-        adapter = new ListViewAdapterReview() ;
-        // 리스트뷰 참조 및 Adapter달기
+
+        /* listview 생성 및 adapter와 연결 */
         listview2 = (ListView) view.findViewById(R.id.listview2);
-
-
-        System.out.println(LogIn.userID);
+        adapter = new ListViewAdapterReview() ;
+        listview2.setAdapter(adapter);
 
         GetData task = new GetData();
         task.execute(LogIn.userID);
 
         return view;
     }
-
-
 
     private class GetData extends AsyncTask<String,Void,String> {
         ProgressDialog progressDialog;
@@ -72,7 +68,7 @@ public class Frag4 extends Fragment {
             }
 
             try {
-                URL url = new URL(Id_Review_URL);
+                URL url = new URL(myReviewURL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
                 httpURLConnection.setReadTimeout(5000);

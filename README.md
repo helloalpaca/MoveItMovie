@@ -1,6 +1,7 @@
 # MoveItMovie
 term project for SoftwareDesign <br />
 email address : jms393497@gmail.com <br />
+Demo Video : https://youtu.be/meTqQoW314o <br />
 blog address : https://popcorn16.tistory.com/ <br />
 
 ## Introduction
@@ -25,8 +26,12 @@ This is an android application for audience who likes to watch movies in theater
 If you want to get box office ranking, sign up to this homepage and get own key. <br />
 - open API of NAVER (homepage : https://developers.naver.com/main/) <br />
 If you want to get Movie Poster, sign up to this homepage and get own key. <br />
-- google map
+- google map <br />
 If you want to get locations of theaters, sign up to google cloud platform and get own key.
+
+## Database table information
+database table backup file is in /server/backup.sql
+mysql -u [account] -p [database] < backup.sql
 
 ## screenshot
 <img src="/images/Screenshot_1.png" width="180px" height="320px" title="Login" alt="Login"></img>

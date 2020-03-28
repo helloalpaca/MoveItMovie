@@ -35,10 +35,7 @@ import java.util.Date;
 public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener{
 
     public final static String BoxOfficeURL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?";
-    public final static String KEY = "key=230633a2ac677ec1574e86789aa3b586";
     public final static String NaverAPI = "https://openapi.naver.com/v1/search/movie.json?query=";
-    public final static String clientId = "S1N3ovKB8l6gkWERCwFE";
-    public final static String clientSecret = "0ZFd4YgOOU";
 
     ListView listview ;
     ListViewAdapter adapter;
@@ -48,8 +45,6 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
     String movieNm = null;
     Bitmap bitmap;
     Drawable imageView;
-    BitmapDrawable bitmapDrawable;
-    String Genre = "장르";
     boolean flag = true;
 
     @Nullable
@@ -63,6 +58,8 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
             StrictMode.setThreadPolicy(policy);
         }
 
+        String KEY = getString(R.string.boxOfficeKey);
+
         // ListView 생성 및 adapter 연결
         listview = (ListView) view.findViewById(R.id.listview1);
         ListViewAdapter adapter = new ListViewAdapter();
@@ -73,7 +70,7 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
         btnMovieType = (Button)view.findViewById(R.id.frag1_btn_type);
         btnMovieType.setOnClickListener(this);
 
-        String commertialURL = BoxOfficeURL+KEY+"&targetDt=20180622";
+        String commertialURL = BoxOfficeURL+"key="+KEY+"&targetDt=20180622";
         GetBoxOfficeData(adapter, commertialURL);
 
         return view;
@@ -135,8 +132,8 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
                             GetMoviePosterNaver();
 
                             /* ㄴㅓ무 오래걸려서 image뷰 일단 막아놓음*/
-                            //adapter.addItem(imageView,movieNm,openDate,saleShare);
-                            adapter.addItem(null,movieNm,openDate,saleShare);
+                            adapter.addItem(imageView,movieNm,openDate,saleShare);
+                            //adapter.addItem(null,movieNm,openDate,saleShare);
                         }
                         break;
                 }
@@ -150,6 +147,8 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
 
     public void GetMoviePosterNaver(){
         try{
+            final String clientId = getString(R.string.naverClientId);
+            final String clientSecret = getString(R.string.naverClientSecret);
             String apiURL = NaverAPI + movieNm;
             URL ImgUrl = new URL(apiURL);
             HttpURLConnection connection = (HttpURLConnection)ImgUrl.openConnection();
@@ -219,14 +218,13 @@ public class Frag1 extends Fragment implements AdapterView.OnItemClickListener, 
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getActivity() ,adapter.getItemTitle(i),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity() ,adapter.getItemTitle(i),Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View view) {
-
+        String KEY = getString(R.string.boxOfficeKey);
         //adapter.clear();
-
         if (flag) {
             ListViewAdapter adapter2 = new ListViewAdapter();
             btnMovieType.setText("상업 영화");
