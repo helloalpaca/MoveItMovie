@@ -14,19 +14,19 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class GetSignUpData extends AsyncTask<String,Void,String> {
+public class InsertData extends AsyncTask<String,Void,String> {
 
     Context context;
     ProgressDialog progressDialog;
 
-    GetSignUpData(Context context){
+    InsertData(Context context){
         this.context = context;
     }
 
     @Override
     protected String doInBackground(String... strings) {
 
-        String serverURL = "id="+strings[1]+"&pw="+strings[2];
+        String serverURL = strings[1];
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -102,6 +102,5 @@ public class GetSignUpData extends AsyncTask<String,Void,String> {
         super.onPostExecute(result);
 
         progressDialog.dismiss();
-        Toast.makeText(context,"아이디를 만들었습니다!!",Toast.LENGTH_SHORT).show();
     }
 }
