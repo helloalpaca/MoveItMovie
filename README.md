@@ -2,7 +2,6 @@
 term project for SoftwareDesign <br />
 - email address : jms393497@gmail.com <br />
 - Demo Video : https://youtu.be/meTqQoW314o <br />
-- blog : https://popcorn16.tistory.com/ <br />
 
 ## Introduction
 This is an android application for audience who likes to watch movies in theaters.
